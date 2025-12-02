@@ -1,7 +1,7 @@
 {
   "name": "tcia-discord",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot oficial TC-IA para Discord",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
