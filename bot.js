@@ -6,11 +6,8 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 // ============================
 const TCIA_API_KEY = "API-229efcb87aa8e504a77fe1640c81ea43";
 const TCIA_TOKEN   = "TOKEN-f5cfbcfb8bd9eb34";
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 
-// ============================
-// TOKEN DEL BOT DE DISCORD
-// ============================
-const DISCORD_TOKEN = "MTQ0NTIxOTUxMzYxMTMyNTQ4MA.GUXTrS.CsuXAmx2mkRkXruFCIfr3LADjud2QFMksN0UgQ";
 
 const client = new Client({
     intents: [
