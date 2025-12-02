@@ -1,13 +1,13 @@
 const { Client, GatewayIntentBits } = require("discord.js");
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 // ============================
 // CREDENCIALES TC-IA DEL PANEL
+// (AHORA SE TOMAN DESDE RAILWAY)
 // ============================
-const TCIA_API_KEY = "API-229efcb87aa8e504a77fe1640c81ea43";
-const TCIA_TOKEN   = "TOKEN-f5cfbcfb8bd9eb34";
+const TCIA_API_KEY = process.env.TCIA_API_KEY;
+const TCIA_TOKEN   = process.env.TCIA_TOKEN;
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-
 
 const client = new Client({
     intents: [
@@ -25,7 +25,6 @@ client.on("messageCreate", async (msg) => {
     if (msg.author.bot) return;
 
     try {
-        // Llamada a TC-IA
         const respuesta = await fetch("https://top-conquerors.com/IATC/api.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
